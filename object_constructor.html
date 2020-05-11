@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Object</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<header>
+		<h1>l'Object &amp; constructeur</h1>
+	</header>
+	<main>
+		
+	</main>
+	<script>
+		//exemple 1
+		document.addEventListener("DOMContentLoaded",()=>{
+				console.log("ok")
+
+				function User(nom, prenom){ //constructeur
+					this.nom = nom;
+					this.prenom = prenom;
+
+				}
+
+				let user_1 = new User("Eich","Brandan")
+				console.log(user_1.nom)
+
+				//exemple 2 
+				let app =({
+					constructor(marque,prix){
+						this.marque = marque;
+						this.prix = prix;
+					},
+					printOut(){
+						console.log(this.marque+" "+this.prix) 
+					}
+				})
+				
+				let prod_1 = Object.create(app)
+				prod_1.constructor("Apple",700)
+				prod_1.printOut()
+
+		})
+	</script>
+</body>
+</html>
